@@ -1,4 +1,4 @@
-import {InscriptionAssuranceVieProduitFinancier} from './InscriptionAssuranceVieProduitFinancier'
+import {InscriptionAssuranceVieProduitFinancier} from './InscriptionAssuranceVieProduitFinancier';
 export interface Distributeur{
   id: number;
   reference: string;
