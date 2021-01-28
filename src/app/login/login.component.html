@@ -1,0 +1,101 @@
+<div class="content">
+    <mat-card class="example-card">
+      <mat-card-header class="title">
+        <div><mat-card-title >Assurance de vie</mat-card-title></div>
+        <div><mat-card-subtitle>Authentification</mat-card-subtitle></div>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-tab-group mat-align-tabs="center">
+          
+          <mat-tab label="Connexion">
+            <form class="example-form">
+              <div>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Nom d'utilisateur</mat-label>
+                  <input type="text"  matInput placeholder="Nom d'utilisateur"  [(ngModel)]="client.cin" name="c_user">
+                  <mat-icon matSuffix>account_circle</mat-icon>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Mot de passe</mat-label>
+                  <input type="password" matInput placeholder="Mot de passe" [(ngModel)]="client.pwd" name="c_pwd">
+                  <mat-icon matSuffix>lock</mat-icon>
+                </mat-form-field>
+              </div>
+              <button mat-button (click)="connecter()" >Se connecter </button>
+            </form>
+          </mat-tab>
+  
+  
+  
+          
+          <mat-tab label="Inscription">
+            <form class="example-form">
+              <table class="example-full-width" cellspacing="0"><tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Nom </mat-label>
+                  <input type="text" matInput placeholder="Nom" [(ngModel)]="client.nom" name="i_nom">
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Prénom</mat-label>
+                  <input type="text" matInput placeholder="Prénom" [(ngModel)]="client.prenom" name="i_prenom">
+                </mat-form-field>
+              </td>
+            </tr></table>
+            <div>
+              <mat-form-field class="example-full-width">
+                <mat-label>Mot de passe</mat-label>
+                <input type="password" matInput  placeholder="Mot de passe" [(ngModel)]="client.pwd" name="i_pwd">
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field class="example-full-width">
+                <mat-label>Confirmer le Mot de passe</mat-label>
+                <input type="password" matInput placeholder="Confirmer le Mot de passe"   name="i_cpwd">
+              </mat-form-field>
+            </div>
+            <table class="example-full-width" cellspacing="0"><tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Téléphone</mat-label>
+                  <span matPrefix>+212 &nbsp;</span>
+                  <input type="tel" matInput #telephone maxlength="10" placeholder="0666666666" [(ngModel)]="client.telephone" name="i_tel">
+                  <mat-hint align="end">{{telephone.value.length}} / 10</mat-hint>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <mat-label>CIN</mat-label>
+                  <input type="text" matInput  placeholder="" [(ngModel)]="client.cin" name="i_cin">
+                </mat-form-field>
+              </td>
+            </tr></table>
+            <table class="example-full-width" cellspacing="0"><tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Adresse</mat-label>
+                  <textarea  matInput  placeholder="" [(ngModel)]="client.adresse" name="i_adresse"></textarea>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Date de Naissance</mat-label>
+                  <input type="date" matInput  placeholder="" placeholder="yyyy-mm-dd" [(ngModel)]="client.dateNaissance" name="i_date" style="margin-top: 12px;">
+                </mat-form-field>
+              </td>
+            </tr></table>
+              <button mat-button (click)="inscrire()" >S'inscrire </button>
+            </form>
+          </mat-tab>
+  
+        </mat-tab-group>
+        
+      </mat-card-content>
+     
+    </mat-card>
+  </div>
+  <router-outlet></router-outlet>
