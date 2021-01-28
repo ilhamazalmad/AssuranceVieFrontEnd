@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,6 +15,8 @@ import { HomeComponent } from './home/home.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { LoginComponent } from './login/login.component';
 import { Routes } from '@angular/router';
+import { AjoutAssuranceComponent } from './clientForms/ajout-assurance/ajout-assurance.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 const routes: Routes = [
   {path:'Home',component:HomeComponent},
@@ -25,7 +26,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    AjoutAssuranceComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ const routes: Routes = [
     FormsModule,
     MatIconModule,
     HttpClientModule,
-    AngularFileUploaderModule
+    AngularFileUploaderModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
