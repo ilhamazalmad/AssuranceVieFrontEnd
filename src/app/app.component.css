@@ -1,0 +1,15 @@
+.navbar-dark .navbar-brand {
+    color: #fff;
+    font-size: 2em;
+    margin-top: 1.2%;
+}
+.nav-link{
+    font-size: 1.5em;
+    
+}
+.navbar-nav{
+    position: absolute;
+    right: 3%;
+}
+
+

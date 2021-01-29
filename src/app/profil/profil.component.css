@@ -1,0 +1,42 @@
+.example-card {
+    width: 500px;
+  }
+   
+  .content{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align: -webkit-center;
+  }
+  .example-form {
+    width: 100%;
+  }
+  .title{
+    margin-top: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .mat-card-subtitle{
+    position: relative;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-shadow: 1px 1px #591630,
+                 2px 2px  #E14282;
+  }
+  
+  .example-full-width {
+    margin-top: 10px;
+    width: 90%;
+    color: #E14282;
+  }
+  .mat-button{
+    color: white;
+    height: 40px;
+    width: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #9C2855;
+    
+  }

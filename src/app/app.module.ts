@@ -17,17 +17,17 @@ import { LoginComponent } from './login/login.component';
 import { Routes } from '@angular/router';
 import { AjoutAssuranceComponent } from './clientForms/ajout-assurance/ajout-assurance.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { ProfilComponent } from './profil/profil.component';
 
-const routes: Routes = [
-  {path:'Home',component:HomeComponent},
-  {path:'Login',component:LoginComponent}
-];
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    AjoutAssuranceComponent
+    AjoutAssuranceComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +42,7 @@ const routes: Routes = [
     HttpClientModule,
     AngularFileUploaderModule,
     ReactiveFormsModule
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -9,10 +9,19 @@ import {ClientDto} from '../model/client-dto';
 export class ConnectionService {
 
   constructor(private _http :HttpClient) { }
-  public inscription( client :ClientDto):Observable<any>{
-    return this._http.post("http://localhost:8090/assurance-api/Client/register",client);
+  public save( client :ClientDto):Observable<any>{
+    return this._http.post<ClientDto>("http://localhost:8090/assurance-api/Client/register",client);
   }
   public connexion(client :ClientDto):Observable<any>{
     return this._http.get<ClientDto>("http://localhost:8090/assurance-api/Client/login/cin/"+client.cin+"/pwd/"+client.pwd);
+  }
+  public findById(id :String):Observable<any>{
+    return this._http.get<ClientDto>("http://localhost:8090/assurance-api/Client/find/"+id);
+  }
+  public findByCin(cin :String):Observable<any>{
+    return this._http.get<ClientDto>("http://localhost:8090/assurance-api/Client/find/cin/"+cin);
+  }
+  public findByTelephone(tel :String):Observable<any>{
+    return this._http.get<ClientDto>("http://localhost:8090/assurance-api/Client/find/telephone/"+tel);
   }
 }
