@@ -5,12 +5,12 @@ import {DistributeurDto} from './distributeur-dto';
 import {FormuleDto} from './formule-dto';
 
 export class InscriptionAssuranceVieProduitFinancierDto {
-    id!: String ;
+    id!: string ;
 	iAV!: InscriptionAssuranceVieDto;
 	produit!: ProduitFinancierDto;
-	policeAssurance!: String ;
+	policeAssurance!: string ;
 	distributeur!: DistributeurDto;
-	prix!: String ;
+	prix!: string ;
 	formule!: FormuleDto;
 	etatInscription!: EtatInscriptionDto;
 }

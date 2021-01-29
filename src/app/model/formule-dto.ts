@@ -1,8 +1,8 @@
 import { ProduitFinancierDto } from './produit-financier-dto';
 export class FormuleDto {
-    id!: String;
-	reference!: String;
-	libelle!: String;
-	prix!: String;
+    id!: string;
+	reference!: string;
+	libelle!: string;
+	prix!: string;
     produitFinancier!: ProduitFinancierDto;
 }

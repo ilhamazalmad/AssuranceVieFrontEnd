@@ -1,7 +1,7 @@
 import { InscriptionAssuranceVieProduitFinancierDto } from './inscription-assurance-vie-produit-financier-dto';
 export class EtatInscriptionDto {
-    id!: String;
-	reference!: String;
-	libelle!: String;
+    id!: string;
+	reference!: string;
+	libelle!: string;
 	 iAVPF!:InscriptionAssuranceVieProduitFinancierDto[];
 }

@@ -1,10 +1,10 @@
 import {ClientDto} from './client-dto';
 import { InscriptionAssuranceVieProduitFinancierDto } from './inscription-assurance-vie-produit-financier-dto';
 export class InscriptionAssuranceVieDto {
-    id!: String;
-	reference!: String;
+    id!: string;
+	reference!: string;
 	client!: ClientDto;
-	prix!: String;
-    dateInscription!: String;
+	prix!: string;
+    dateInscription!: string;
     iAVPF!: InscriptionAssuranceVieProduitFinancierDto[];
 }
