@@ -20,9 +20,9 @@ export class LoginComponent implements OnInit {
     this._service.save(this.client).subscribe(
       data => {
         this.client=data
-        if(this.client != null)
+        if(this.client != null && this.client.id != null )
         {
-          alert("Inscription réussite :"+ this.client.nom+" "+ this.client.prenom)
+          alert("Inscription réussite :"+ this.client.nom+"_"+ this.client.prenom)
           localStorage.setItem("session","true");
           localStorage.setItem("client",this.client.id);
           (document.getElementById('login') as HTMLElement).textContent="Deconnexion";
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       this._service.connexion(this.client).subscribe(
         data => {
           this.client=data
-          if(this.client != null)
+          if(this.client != null && this.client.id != null )
           {
             alert("Connexion réussite :"+ this.client.nom+" "+ this.client.prenom)
             localStorage.setItem("session","true");

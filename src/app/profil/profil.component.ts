@@ -49,7 +49,7 @@ export class ProfilComponent implements OnInit {
     this._service.save(this.client).subscribe(
       data => {
         this.client=data
-        if(this.client != null)
+        if(this.client != null && this.client.id != null )
         {
           alert("Modification réussite :"+ this.client.nom+" "+ this.client.prenom)
           localStorage.setItem("session","true");

@@ -38,7 +38,7 @@ export class AppComponent{
           this._service.findById(id).subscribe(
             data => {
               this.client=data;
-              if(this.client != null)
+              if(this.client != null && this.client.id != null )
               {
                 (document.getElementById('profil') as HTMLElement).textContent=this.client.nom+"_"+ this.client.prenom;
                 this._router.navigate(['/'])
