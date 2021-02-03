@@ -29,12 +29,12 @@ export class AjoutAssuranceVieComponent implements OnInit {
   produits !: ProduitFinancierDto[];
   formules !: FormuleDto[];
   formulesChoisis : Array<any> = [];
+  total :any;
   constructor(private _service:ConnectionService,
     private _router : Router,
     private _activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.distributeur.id="1";
     this._service.findAllProduits().subscribe(
       data => {
         this.produits=data
@@ -58,6 +58,12 @@ export class AjoutAssuranceVieComponent implements OnInit {
         if(data != null){
           this.formule=data;
           this.formulesChoisis.push(this.formule);
+          this.total=0;
+          this.formulesChoisis.forEach(element => {
+            this.formule2=element;
+            this.total = this.total + Number(this.formule2.prix);
+          });
+          this.formule= new FormuleDto();
 
         } 
         else 
@@ -76,17 +82,25 @@ export class AjoutAssuranceVieComponent implements OnInit {
       this.formule2=element;
       this.iavpf.produit= this.formule2.produitFinancier;
       this.iavpf.formule= this.formule2;
-      this.iavpf.distributeur=this.distributeur;
       this.iavpfs.push(this.iavpf)
       });
       this.iav.iAVPF=this.iavpfs;
+      
    }
    this._service.saveIAV(this.iav).subscribe(
     data =>{
       if(data == 1)
-      alert("inscription réussite")
+      {
+        alert("inscription réussite")
+      }
+      else if(data == -2){
+        alert(" Vous devez compléter vos informations personnelles !!")
+        this._router.navigate(["Profile"])
+      }
       else
-      alert(" Erreur : l'inscription n'était pas effectuée !!")
+        {
+          alert(" Erreur : l'inscription n'était pas effectuée !!")
+        }
     })
     
     

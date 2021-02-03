@@ -18,6 +18,7 @@ import { Routes } from '@angular/router';
 import { ProfilComponent } from './profil/profil.component';
 import {MatSelectModule} from '@angular/material/select';
 import { AjoutAssuranceVieComponent } from './ajout-assurance-vie/ajout-assurance-vie.component';
+import { AfficheAssuranceVieComponent } from './affiche-assurance-vie/affiche-assurance-vie.component';
 
 
 
@@ -27,7 +28,8 @@ import { AjoutAssuranceVieComponent } from './ajout-assurance-vie/ajout-assuranc
     HomeComponent,
     LoginComponent,
     ProfilComponent,
-    AjoutAssuranceVieComponent
+    AjoutAssuranceVieComponent,
+    AfficheAssuranceVieComponent
   ],
   imports: [
     BrowserModule,

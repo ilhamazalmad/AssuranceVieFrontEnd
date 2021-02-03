@@ -1,21 +1,13 @@
 <div class="content">
     <mat-card class="example-card">
       <mat-card-header class="title">
-        <div><mat-card-subtitle >Inscription assurance vie</mat-card-subtitle></div>
+        <div><mat-card-title >Inscription assurance vie</mat-card-title></div>
       </mat-card-header>
       <mat-card-content>
         <mat-tab-group mat-align-tabs="center">
           
           <mat-tab>
             <form class="example-form">
-              <div>
-                <mat-form-field class="example-full-width">
-                  <mat-label>Reference</mat-label>
-                  <input type="text"  matInput placeholder="Reference"  [(ngModel)]="iav.reference" >
-                  <mat-icon matSuffix>account_circle</mat-icon>
-                </mat-form-field>
-              </div>
-            
               <table class="example-full-width" cellspacing="0">
               <tr>
                 <td>
@@ -72,6 +64,13 @@
                   </tr>
               </tbody>
           </table>
+          <div>
+            <mat-form-field class="example-full-width">
+              <mat-label>Total</mat-label>
+              <input type="text" id ="total" matInput placeholder="Reference"  [(ngModel)]="this.total" >
+            </mat-form-field>
+          </div>
+
           <div >
             <button mat-raised-button  color="primary" type="button"  (click)="Enregistrer()" >Enregistrer l'inscription</button>
           </div>

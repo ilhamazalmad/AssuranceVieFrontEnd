@@ -42,13 +42,20 @@ export class LoginComponent implements OnInit {
           this.client=data
           if(this.client != null && this.client.id != null )
           {
-            alert("Connexion réussite :"+ this.client.nom+" "+ this.client.prenom)
             localStorage.setItem("session","true");
             localStorage.setItem("client",this.client.id);
             (document.getElementById('login') as HTMLElement).textContent="Deconnexion";
+            if(this.client.nom != null)
+            {
             (document.getElementById('profil') as HTMLElement).hidden=false;
             (document.getElementById('profil') as HTMLElement).textContent=this.client.nom+"_"+ this.client.prenom;
             this._router.navigate(['/'])
+            }
+            else
+            {
+            (document.getElementById('profil') as HTMLElement).hidden=true;
+            this._router.navigate(['Profile'])
+            }
           }
           else
           alert("Erreur : la connexion n'était pas effectuée ")
