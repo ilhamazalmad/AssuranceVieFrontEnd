@@ -5,6 +5,7 @@ import {ClientDto} from '../model/client-dto';
 import {ProduitFinancierDto} from '../model/produit-financier-dto';
 import {FormuleDto} from '../model/formule-dto';
 import {InscriptionAssuranceVieDto} from '../model/inscription-assurance-vie-dto';
+import {InscriptionAssuranceVieProduitFinancierDto} from '../model/inscription-assurance-vie-produit-financier-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +46,14 @@ export class ConnectionService {
   public saveIAV(value:InscriptionAssuranceVieDto):Observable<any>{
     return this._http.post("http://localhost:8090/assurance-api/IAV/save",value);
   }
-
+  public deleteIAVPF(id :String):Observable<any>{
+    return this._http.delete("http://localhost:8090/assurance-api/IAVPF/delete/id/"+id);
+  }
+  public updateEtat(id :String,etat :String):Observable<any>{
+    return this._http.put("http://localhost:8090/assurance-api/IAVPF/update/"+id+"/"+etat,null);
+  }
+  public findIAVPFByClient(id :String):Observable<any>{
+    return this._http.get<InscriptionAssuranceVieProduitFinancierDto[]>("http://localhost:8090/assurance-api/IAVPF/find/client/"+id);
+  }
 
 }

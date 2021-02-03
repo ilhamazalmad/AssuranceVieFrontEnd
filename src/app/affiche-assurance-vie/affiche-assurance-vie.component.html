@@ -1,1 +1,39 @@
-<p>affiche-assurance-vie works!</p>
+<div class="content" >
+    <h1 style="background-color: white;"> Liste des inscriptions des assurances de vie des produits financiers</h1>
+    <div style="background-color: white;">
+        
+    <table class="table table-bordered" >
+        <thead>
+            <tr>
+                <th>Contrat</th>
+                <th>Reference</th>
+                <th>Prix</th>
+                <th>Formule</th>
+                <th>Etat de contrat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let iAVPF of iAVPFs">
+                <td>{{iAVPF.id}}</td>
+                <td>{{iAVPF.iAV.reference}}</td>
+                <td>{{iAVPF.prix}}</td>
+                <td>{{iAVPF.formule.libelle}}</td>
+                <td>{{iAVPF.etatInscription.libelle}}</td>
+                
+                <td>
+                    <button mat-raised-button color="primary" type="button" class="btn btn-primary" (click)="delete(iAVPF.id)" >
+                        Supprimer le contrat
+                    </button>
+                    <button mat-raised-button color="primary" type="button" class="btn btn-primary" (click)="confirm(iAVPF.id,iAVPF.etatInscription.id)">
+                        Confirmer le contrat
+                    </button>
+                    <button mat-raised-button color="primary" type="button" class="btn btn-primary" (click)="report(iAVPF.id)">
+                        Télécharger l'acte d'engagement 
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>

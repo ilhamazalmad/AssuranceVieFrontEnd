@@ -35,6 +35,7 @@ export class AjoutAssuranceVieComponent implements OnInit {
     private _activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
+    localStorage.removeItem("page")
     this._service.findAllProduits().subscribe(
       data => {
         this.produits=data

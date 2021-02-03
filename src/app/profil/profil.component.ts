@@ -55,6 +55,7 @@ export class ProfilComponent implements OnInit {
           localStorage.setItem("client",this.client.id);
           (document.getElementById('login') as HTMLElement).textContent="Deconnexion";
           (document.getElementById('profil') as HTMLElement).hidden=false;
+          (document.getElementById('inscription') as HTMLElement).hidden=false;
           (document.getElementById('profil') as HTMLElement).textContent=this.client.nom+" "+ this.client.prenom;
           this._router.navigate(['/Profile'])
         }

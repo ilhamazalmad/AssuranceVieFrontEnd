@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("client",this.client.id);
           (document.getElementById('login') as HTMLElement).textContent="Deconnexion";
           (document.getElementById('profil') as HTMLElement).hidden=false;
+          (document.getElementById('inscription') as HTMLElement).hidden=false;
           (document.getElementById('profil') as HTMLElement).textContent=this.client.nom+"_"+ this.client.prenom;
           this._router.navigate(['/'])
         }
@@ -44,6 +45,7 @@ export class LoginComponent implements OnInit {
           {
             localStorage.setItem("session","true");
             localStorage.setItem("client",this.client.id);
+            (document.getElementById('inscription') as HTMLElement).hidden=false;
             (document.getElementById('login') as HTMLElement).textContent="Deconnexion";
             if(this.client.nom != null)
             {

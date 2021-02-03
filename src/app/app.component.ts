@@ -22,17 +22,20 @@ export class AppComponent{
         localStorage.setItem("session","false");
         (document.getElementById('login') as HTMLElement).textContent="Connexion";
         (document.getElementById('profil') as HTMLElement).hidden=true;
+        (document.getElementById('inscription') as HTMLElement).hidden=true;
         this._router.navigate(['Login'])
 
       }
       else if(localStorage.getItem("session") == "false"){
         (document.getElementById('login') as HTMLElement).textContent="Connexion";
         (document.getElementById('profil') as HTMLElement).hidden=true;
+        (document.getElementById('inscription') as HTMLElement).hidden=true;
         this._router.navigate(['Login'])
       }
       else if(localStorage.getItem("session") == "true"){
         (document.getElementById('login') as HTMLElement).textContent="Deconnexion";
         (document.getElementById('profil') as HTMLElement).hidden=false;
+        (document.getElementById('inscription') as HTMLElement).hidden=false;
         const id = localStorage.getItem("client");
         if(id != null){
           this._service.findById(id).subscribe(
@@ -41,7 +44,6 @@ export class AppComponent{
               if(this.client != null && this.client.id != null )
               {
                 (document.getElementById('profil') as HTMLElement).textContent=this.client.nom+"_"+ this.client.prenom;
-                this._router.navigate(['/'])
               }
               else
               this.connexion()
@@ -49,7 +51,14 @@ export class AppComponent{
             error =>this.connexion()
           )
         }
-        this._router.navigate(['/'])
+        if(localStorage.getItem("page")=="iavpfs")
+        {
+          this._router.navigate(['IAVPFS'])
+        }
+        else
+        {
+          this._router.navigate(['/'])
+        }
       }
     }
 
@@ -60,8 +69,12 @@ export class AppComponent{
         localStorage.setItem("session","false");
         (document.getElementById('login') as HTMLElement).textContent="Connexion";
         (document.getElementById('profil') as HTMLElement).hidden=true;
+        (document.getElementById('inscription') as HTMLElement).hidden=true;
       this._router.navigate(['Login'])
       
+    }
+    inscriptions(){
+      this._router.navigate(['IAVPFS'])
     }
 
   
