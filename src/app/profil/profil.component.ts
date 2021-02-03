@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ClientDto } from '../model/client-dto';
 import {ConnectionService} from '../services/connection.service';
 import {ActivatedRoute,Router} from '@angular/router';
-import { loadavg } from 'os';
 @Component({
   selector: 'app-profil',
   templateUrl: './profil.component.html',

@@ -58,14 +58,14 @@
                 <input type="password" matInput placeholder="Confirmer le Mot de passe"   name="i_cpwd">
               </mat-form-field>
             </div>
-            <table class="example-full-width" cellspacing="0"><tr>
+            <table  cellspacing="0"><tr>
               <td>
                 <mat-form-field class="example-full-width">
                   <mat-label>Téléphone</mat-label>
                   <span matPrefix>+212 &nbsp;</span>
                   <input type="tel" matInput #telephone maxlength="10" placeholder="0666666666" [(ngModel)]="client.telephone" name="i_tel">
                   <mat-hint align="end">{{telephone.value.length}} / 10</mat-hint>
-                </mat-form-field>
+                </mat-form-field> 
               </td>
               <td>
                 <mat-form-field class="example-full-width">

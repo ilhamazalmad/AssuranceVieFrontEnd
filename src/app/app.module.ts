@@ -7,7 +7,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
-import {FormsModule} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFileUploaderModule } from "angular-file-uploader";
@@ -15,9 +15,9 @@ import { HomeComponent } from './home/home.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { LoginComponent } from './login/login.component';
 import { Routes } from '@angular/router';
-import { AjoutAssuranceComponent } from './clientForms/ajout-assurance/ajout-assurance.component';
-import {ReactiveFormsModule} from '@angular/forms';
 import { ProfilComponent } from './profil/profil.component';
+import {MatSelectModule} from '@angular/material/select';
+import { AjoutAssuranceVieComponent } from './ajout-assurance-vie/ajout-assurance-vie.component';
 
 
 
@@ -26,8 +26,8 @@ import { ProfilComponent } from './profil/profil.component';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    AjoutAssuranceComponent,
-    ProfilComponent
+    ProfilComponent,
+    AjoutAssuranceVieComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +41,8 @@ import { ProfilComponent } from './profil/profil.component';
     MatIconModule,
     HttpClientModule,
     AngularFileUploaderModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule,
     ],
   providers: [],
   bootstrap: [AppComponent]
